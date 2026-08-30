@@ -1,0 +1,608 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    padding: 30px;
+
+    padding-top: 90px;
+
+    background: #f4f7fb;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.dashboard-bar {
+    position: fixed;
+
+    top: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+}
+
+
+.nav-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+
+.nav-icon:hover {
+    background: #eef5fb;
+
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.sleep-container {
+    width: min(1100px, 100%);
+
+    margin: auto;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.sleep-container h1 {
+    margin: 0 0 25px;
+}
+
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   WEEKLY
+======================================== */
+
+.weekly-dashboard h2,
+.today-dashboard h2 {
+    margin-top: 0;
+}
+
+
+.weekly-value {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+
+.wave-chart {
+    width: 100%;
+
+    height: 180px;
+
+    color: #6c8cff;
+}
+
+
+.wave-chart svg {
+    width: 100%;
+
+    height: 100%;
+}
+
+
+.days {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 5px;
+
+    color: #777;
+}
+
+
+/* ========================================
+   TODAY SLEEP
+======================================== */
+
+.today-dashboard {
+    text-align: center;
+}
+
+
+.sleep-circle {
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    margin: 25px auto;
+
+    background:
+        conic-gradient(
+            #6c8cff 0deg 330deg,
+            #e8ecf5 330deg 360deg
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.circle-inner {
+    width: 175px;
+
+    height: 175px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.circle-inner strong {
+    font-size: 30px;
+}
+
+
+.circle-inner span {
+    color: #777;
+
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.sleep-message {
+    max-width: 650px;
+
+    margin: 15px auto 22px;
+
+    line-height: 1.6;
+}
+
+
+.sleep-message p {
+    margin: 4px 0;
+}
+
+
+/* ========================================
+   SLEEP INPUT AREA
+======================================== */
+
+.sleep-input-area {
+    max-width: 600px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.time-input {
+    background: #f7f9fc;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 14px;
+
+    padding: 12px 14px;
+
+    text-align: left;
+}
+
+
+.time-input label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.time-input input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    color: #222;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   CALCULATE BUTTON
+======================================== */
+
+#calculateSleepBtn {
+    display: block;
+
+    width: min(600px, 100%);
+
+    margin: 0 auto;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+    background: #6c8cff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#calculateSleepBtn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 15px rgba(108, 140, 255, 0.25);
+}
+
+
+#calculateSleepBtn:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   SMALL DASHBOARDS
+======================================== */
+
+.small-dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.small-dashboard {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 0;
+}
+
+
+.small-icon {
+    font-size: 30px;
+}
+
+
+.small-dashboard h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+}
+
+
+.small-dashboard p {
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   SLEEP STAGES
+======================================== */
+
+.sleep-stages h2 {
+    margin-top: 0;
+}
+
+
+.stage-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.stage-row:last-child {
+    border-bottom: none;
+}
+
+
+.stage-row span {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+/* ========================================
+   SLEEP RESULT
+======================================== */
+
+.result-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    font-size: 17px;
+}
+
+
+.result-row strong {
+    font-weight: bold;
+}
+
+
+/* ========================================
+   SLEEP TIP
+======================================== */
+
+.sleep-tip {
+    margin-top: 30px;
+
+    padding: 10px 5px;
+
+    line-height: 1.6;
+}
+
+
+.sleep-tip h3 {
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px;
+
+        padding-top: 85px;
+    }
+
+
+    .dashboard {
+        padding: 20px;
+    }
+
+
+    .dashboard-bar {
+        gap: 7px;
+
+        padding: 8px 10px;
+    }
+
+
+    .nav-icon {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+
+    .sleep-circle {
+        width: 190px;
+
+        height: 190px;
+    }
+
+
+    .circle-inner {
+        width: 150px;
+
+        height: 150px;
+    }
+
+
+    .circle-inner strong {
+        font-size: 26px;
+    }
+
+
+    .sleep-input-area {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .small-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .days {
+        font-size: 12px;
+    }
+
+}/* ============================= */
+/* CALCULATE SLEEP */
+/* ============================= */
+
+.calculate-dashboard {
+    text-align: center;
+}
+
+.calculate-dashboard h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sleep-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.sleep-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.sleep-input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sleep-input-group input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#calculateSleepBtn {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    background: #6c8cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#calculateSleepBtn:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 650px) {
+
+    .sleep-inputs {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .sleep-input-group {
+        width: 100%;
+    }
+
+    .sleep-input-group input {
+        width: 100%;
+    }
+
+}
