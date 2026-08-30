@@ -1,0 +1,1555 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    margin: 0;
+    padding: 25px;
+
+    background: #f4f7fb;
+
+    font-family: Arial, sans-serif;
+
+    color: #182b55;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    width: min(1100px, 100%);
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.top-bar h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #182b55;
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+#languageSelect {
+    padding: 8px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.health-container {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+#pageTitle {
+    margin: 5px 0 15px;
+
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #182b55;
+}
+
+
+/* =========================
+   HOME BANNER
+========================= */
+
+.home-banner {
+    width: 100%;
+
+    height: 260px;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 15px 25px;
+
+    margin-bottom: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+.home-image-box {
+    width: 100%;
+
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.home-image {
+    width: 100%;
+
+    max-width: 430px;
+
+    height: 220px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.home-message {
+    padding: 10px 15px;
+}
+
+
+.home-message p {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    font-weight: 600;
+
+    color: #182b55;
+}
+
+
+/* =========================
+   DASHBOARD AREA
+========================= */
+
+.dashboard-area {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================
+   HEALTH GRID
+========================= */
+
+.health-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 15px;
+
+    min-height: 350px;
+}
+
+
+/* =========================
+   HEALTH CARD
+========================= */
+
+.health-card {
+    position: relative;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.health-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================
+   CARD TITLES
+========================= */
+
+.health-card h3 {
+    margin: 0;
+
+    font-size: 18px;
+
+    color: #182b55;
+}
+
+
+.card-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.today-label {
+    font-size: 11px;
+
+    color: #8993a5;
+}
+
+
+/* =========================
+   LOGIN TEXT
+========================= */
+
+.login-card-text {
+    margin: 28px 0 0;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #182b55;
+}
+
+
+/* =========================
+   STEPS CARD
+========================= */
+
+.steps-card {
+    grid-row: span 2;
+
+    min-height: 350px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   STEPS DATA
+========================= */
+
+.steps-data {
+    margin-top: 18px;
+}
+
+
+.steps-main {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   STEPS CIRCLE
+========================= */
+
+.steps-circle {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #64c88a 0deg 262deg,
+            #e7ebef 262deg 360deg
+        );
+}
+
+
+.steps-circle-inner {
+    width: 79px;
+    height: 79px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+.steps-circle-inner strong {
+    font-size: 20px;
+}
+
+
+.steps-circle-inner small {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #888;
+}
+
+
+/* =========================
+   STEPS INFO
+========================= */
+
+.steps-info h2 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #182b55;
+}
+
+
+.steps-info p {
+    margin: 5px 0;
+
+    font-size: 13px;
+
+    color: #667085;
+}
+
+
+.steps-info span {
+    font-size: 12px;
+
+    color: #8993a5;
+}
+
+
+/* =========================
+   STEPS PROGRESS
+========================= */
+
+.steps-progress {
+    width: 100%;
+
+    height: 8px;
+
+    margin: 25px 0 18px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e8edf0;
+}
+
+
+.steps-progress div {
+    width: 72.84%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #64c88a;
+}
+
+
+/* =========================
+   STEPS BOTTOM
+========================= */
+
+.steps-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.steps-bottom div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.steps-bottom small {
+    font-size: 11px;
+
+    color: #8993a5;
+}
+
+
+.steps-bottom strong {
+    margin-top: 4px;
+
+    font-size: 15px;
+
+    color: #182b55;
+}
+
+
+.steps-bottom > span {
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: #eef8f2;
+
+    font-size: 11px;
+
+    color: #4c9c6c;
+}
+
+
+/* =========================
+   SMALL CARD DATA
+========================= */
+
+.small-card-data {
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.small-card-data strong {
+    font-size: 25px;
+
+    color: #182b55;
+}
+
+
+.small-card-data span {
+    font-size: 12px;
+
+    color: #8993a5;
+}
+
+
+/* =========================
+   WATER CARD
+========================= */
+
+.water-card {
+    min-width: 0;
+
+    width: 108%;
+}
+
+
+/* =========================
+   WATER DATA
+========================= */
+
+.water-data {
+    margin-top: 18px;
+}
+
+
+.water-value {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+}
+
+
+.water-value strong {
+    font-size: 28px;
+
+    color: #182b55;
+}
+
+
+.water-value span {
+    font-size: 13px;
+
+    color: #8993a5;
+}
+
+
+.water-data small {
+    font-size: 11px;
+
+    color: #8993a5;
+}
+
+
+.water-progress {
+    width: 100%;
+
+    height: 8px;
+
+    margin: 15px 0 8px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e8edf0;
+}
+
+
+.water-progress div {
+    width: 62.5%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #64c88a;
+}
+
+
+/* =========================
+   LOGIN AREA
+========================= */
+
+.login-area,
+.user-area {
+    min-height: 350px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   LOGIN AREA
+========================= */
+
+.login-area {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.login-area h2 {
+    margin: 0 0 20px;
+
+    font-size: 22px;
+
+    color: #182b55;
+}
+
+
+#loginForm {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin: 0 auto;
+}
+
+
+#loginForm input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 7px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+#loginForm input:focus {
+    border-color: #182b55;
+}
+
+
+/* =========================
+   PASSWORD INFO
+========================= */
+
+.password-info {
+    margin: 8px 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.login-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #182b55;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.login-btn:hover {
+    background: #2c4475;
+}
+
+
+/* =========================
+   USER AREA
+   LOGIN နေရာမှာပဲ ပေါ်မယ်
+========================= */
+
+.user-area {
+    display: none;
+
+    min-height: 350px;
+
+    margin-top: 0;
+
+    text-align: left;
+}
+
+
+.user-box {
+    height: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 15px;
+}
+
+
+.user-box h2 {
+    margin: 0 0 12px;
+
+    font-size: 23px;
+
+    color: #182b55;
+}
+
+
+.user-box p {
+    margin: 5px 0;
+
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+#dashboardDescription {
+    max-width: 350px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn {
+    margin-top: 18px;
+
+    padding: 10px 28px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #d9534f;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.logout-btn:hover {
+    background: #c9302c;
+}
+
+
+/* =========================
+   HEALTHCARE INFO
+========================= */
+
+.healthcare-info {
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+
+.healthcare-info p {
+    margin: 7px 0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #52627a;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-area {
+        grid-template-columns: 1.3fr 1fr;
+
+        gap: 15px;
+    }
+
+
+    .home-banner {
+        height: 240px;
+
+        gap: 15px;
+
+        padding: 12px 18px;
+    }
+
+
+    .home-image {
+        height: 205px;
+    }
+
+
+    .home-message p {
+        font-size: 17px;
+    }
+
+
+    .health-card {
+        padding: 15px;
+    }
+
+
+    .water-card {
+        width: 105%;
+    }
+
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .top-bar {
+        margin-bottom: 15px;
+    }
+
+
+    .top-bar h2 {
+        font-size: 17px;
+    }
+
+
+    #languageSelect {
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+
+    #pageTitle {
+        font-size: 24px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .home-banner {
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 12px 15px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .home-image-box {
+        height: 175px;
+
+        width: 100%;
+    }
+
+
+    .home-image {
+        width: 100%;
+
+        max-width: 300px;
+
+        height: 165px;
+    }
+
+
+    .home-message {
+        padding: 5px 10px 10px;
+
+        text-align: center;
+    }
+
+
+    .home-message p {
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard-area {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .health-grid {
+        min-height: auto;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: auto auto;
+
+        gap: 10px;
+    }
+
+
+    .health-card {
+        min-height: 115px;
+
+        padding: 13px;
+    }
+
+
+    .steps-card {
+        grid-row: span 2;
+
+        min-height: 240px;
+    }
+
+
+    .steps-circle {
+        width: 82px;
+        height: 82px;
+    }
+
+
+    .steps-circle-inner {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .steps-info h2 {
+        font-size: 23px;
+    }
+
+
+    .steps-bottom > span {
+        display: none;
+    }
+
+
+    .water-card {
+        width: 100%;
+    }
+
+
+    .health-card h3 {
+        font-size: 15px;
+    }
+
+
+    .login-card-text {
+        margin-top: 20px;
+
+        font-size: 14px;
+    }
+
+
+    .small-card-data strong {
+        font-size: 20px;
+    }
+
+
+    .login-area,
+    .user-area {
+        min-height: 300px;
+
+        padding: 20px;
+    }
+    .user-box {
+        min-height: 260px;
+
+        padding: 10px;
+    }
+
+
+    .user-box h2 {
+        font-size: 20px;
+    }
+
+
+    #dashboardDescription {
+        font-size: 13px;
+    }
+
+
+    .healthcare-info {
+        padding: 12px 15px;
+    }
+
+
+    .healthcare-info p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 12px;
+    }
+
+
+    .top-bar h2 {
+        font-size: 15px;
+    }
+
+
+    #pageTitle {
+        font-size: 21px;
+    }
+
+
+    .home-image-box {
+        height: 150px;
+    }
+
+
+    .home-image {
+        height: 145px;
+
+        max-width: 260px;
+    }
+
+
+    .home-message p {
+        font-size: 14px;
+    }
+
+
+    .health-card {
+        min-height: 105px;
+
+        padding: 11px;
+    }
+
+
+    .steps-card {
+        min-height: 220px;
+    }
+
+
+    .steps-main {
+        gap: 10px;
+    }
+
+
+    .steps-circle {
+        width: 72px;
+        height: 72px;
+    }
+
+
+    .steps-circle-inner {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .steps-circle-inner strong {
+        font-size: 15px;
+    }
+
+
+    .steps-info h2 {
+        font-size: 20px;
+    }
+
+
+    .health-card h3 {
+        font-size: 14px;
+    }
+
+
+    .login-card-text {
+        font-size: 13px;
+    }
+
+}
+/* =========================
+   LOGIN & SIGN UP MODERN UI
+========================= */
+
+.login-area {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fafc
+        );
+
+    border: 1px solid #e5eaf0;
+
+    box-shadow:
+        0 10px 30px rgba(24, 43, 85, 0.10);
+}
+
+
+/* LOGIN / SIGNUP BOX */
+
+#loginBox,
+#signupBox {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 10px 5px;
+
+    animation: formFade 0.3s ease;
+}
+
+
+@keyframes formFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* FORM TITLE */
+
+#loginBox h2,
+#signupBox h2 {
+    margin-bottom: 22px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #182b55;
+}
+
+
+/* INPUT */
+
+#loginForm input,
+#signupForm input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin: 7px 0;
+
+    border: 1px solid #d9e0e8;
+
+    border-radius: 11px;
+
+    background: #f9fbfd;
+
+    color: #182b55;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#loginForm input:focus,
+#signupForm input:focus {
+
+    background: white;
+
+    border-color: #64c88a;
+
+    box-shadow:
+        0 0 0 3px rgba(100, 200, 138, 0.15);
+}
+
+
+/* PLACEHOLDER */
+
+#loginForm input::placeholder,
+#signupForm input::placeholder {
+    color: #9aa5b5;
+}
+
+
+/* PASSWORD INFO */
+
+.password-info {
+    padding: 5px 2px;
+
+    color: #8993a5;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* LOGIN / SIGNUP BUTTON */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #182b55;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.login-btn:hover {
+
+    background: #263e70;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(24, 43, 85, 0.20);
+}
+
+
+.login-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ACCOUNT SWITCH */
+
+.account-switch {
+
+    margin-top: 18px !important;
+
+    text-align: center;
+
+    color: #7b8798 !important;
+
+    font-size: 13px;
+}
+
+
+/* SIGN UP / LOGIN SWITCH BUTTON */
+
+.account-switch button {
+
+    margin-left: 4px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #4c9c6c;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.account-switch button:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* SIGNUP BOX */
+
+#signupBox {
+    width: 100%;
+}
+
+
+/* MOBILE LOGIN */
+
+@media (max-width: 650px) {
+
+    .login-area {
+
+        padding: 22px 18px;
+
+        min-height: 320px;
+
+    }
+
+    #loginBox,
+    #signupBox {
+
+        max-width: 100%;
+
+    }
+
+    #loginBox h2,
+    #signupBox h2 {
+
+        font-size: 22px;
+
+    }
+
+
+}
+/* ========================================
+   DASHBOARD NAVIGATION BAR
+======================================== */
+
+.dashboard-bar {
+    position: fixed;
+
+    top: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+}
+
+
+.nav-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    border-radius: 12px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.nav-icon:hover {
+    background: #eef5fb;
+
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   NAVIGATION ACTIVE EFFECT
+======================================== */
+
+.nav-icon.active {
+    background: #e8f7ee;
+
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   HOME PAGE TOP SPACE
+======================================== */
+
+body {
+    padding-top: 95px;
+}
+
+
+/* ========================================
+   MOBILE NAVIGATION
+======================================== */
+
+@media (max-width: 650px) {
+
+    .dashboard-bar {
+        top: 10px;
+
+        gap: 7px;
+
+        padding: 8px 10px;
+
+        border-radius: 15px;
+    }
+
+
+    .nav-icon {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+
+    body {
+        padding-top: 85px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL PHONE NAVIGATION
+======================================== */
+
+@media (max-width: 400px) {
+
+    .dashboard-bar {
+        gap: 4px;
+
+        padding: 7px 8px;
+    }
+
+
+    .nav-icon {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 19px;
+    }
+
+}
