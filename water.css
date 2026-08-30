@@ -1,0 +1,772 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    padding: 30px;
+
+    padding-top: 90px;
+
+    background: #f4f7fb;
+
+    font-family: Arial, sans-serif;
+
+    color: #182b49;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.dashboard-bar {
+    position: fixed;
+
+    top: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.12);
+
+    z-index: 1000;
+}
+
+
+.nav-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+
+.nav-icon:hover,
+.nav-icon.active {
+    background: #eef7fc;
+
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.water-container {
+
+    width: min(1100px, 100%);
+
+    margin: 30px auto;
+
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.page-title {
+
+    text-align: center;
+
+    margin: 0 0 40px;
+
+    font-size: 48px;
+
+    color: #182b49;
+
+}
+
+
+/* ========================================
+   MAIN CARD
+======================================== */
+
+.water-main-card {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #d7e3ed;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(
+            40,
+            80,
+            130,
+            0.08
+        );
+
+}
+
+
+/* ========================================
+   LEFT
+======================================== */
+
+.water-left {
+
+    text-align: center;
+
+}
+
+
+.water-left h2 {
+
+    margin-top: 0;
+
+    font-size: 24px;
+
+}
+
+
+/* ========================================
+   GLASS
+======================================== */
+
+.water-glass {
+
+    position: relative;
+
+    width: 210px;
+
+    height: 330px;
+
+    margin: 25px auto;
+
+    overflow: hidden;
+
+    border: 4px solid #8bb9d8;
+
+    border-radius:
+        20px 20px 45px 45px;
+
+    background: #eef8fd;
+
+}
+
+
+.water-fill {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 0%;
+
+    background:
+        linear-gradient(
+            to top,
+            #55b5e5,
+            #9bdef7
+        );
+
+    transition:
+        height 0.6s ease;
+
+}
+
+
+.water-glass-content {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2;
+
+    color: #174e79;
+
+}
+
+
+.water-glass-content span {
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+}
+
+
+.water-glass-content small {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================================
+   PROGRESS
+======================================== */
+
+.water-progress {
+
+    width: 85%;
+
+    height: 20px;
+
+    margin: 15px auto 8px;
+
+    background: #dcebf4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.water-progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #4a9bc9;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.6s ease;
+
+}
+
+
+.goal-text {
+
+    margin: 8px 0;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #315b7d;
+
+}
+
+
+/* ========================================
+   RIGHT
+======================================== */
+
+.water-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+/* ========================================
+   INPUT CARD
+======================================== */
+
+.input-card {
+
+    padding: 25px;
+
+    background: #f8fbfd;
+
+    border: 1px solid #d8e4ed;
+
+    border-radius: 20px;
+
+}
+
+
+.input-card h2 {
+
+    margin: 0 0 8px;
+
+    font-size: 22px;
+
+}
+
+
+.input-description {
+
+    margin: 0 0 18px;
+
+    color: #65778c;
+
+    line-height: 1.5;
+
+}
+/* ========================================
+   INPUT
+======================================== */
+
+.water-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+#waterInput {
+
+    flex: 1;
+
+    padding: 14px;
+
+    border: 1px solid #cbd9e5;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 17px;
+
+    color: #182b49;
+
+    outline: none;
+
+}
+
+
+#waterInput:focus {
+
+    border-color: #4a9bc9;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            74,
+            155,
+            201,
+            0.12
+        );
+
+}
+
+
+.water-input-wrapper span {
+
+    font-weight: bold;
+
+    color: #52718b;
+
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.save-water-btn {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #182b49;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.save-water-btn:hover {
+
+    background: #2d4c78;
+
+    transform: translateY(-2px);
+
+}
+
+
+.save-water-btn:active {
+
+    transform: scale(0.98);
+
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.water-status {
+
+    margin: 15px 0 0;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    min-height: 22px;
+
+}
+
+
+/* ========================================
+   GOAL CARD
+======================================== */
+
+.goal-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #d8e4ed;
+
+    border-radius: 18px;
+
+}
+
+
+.goal-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #edf7fc;
+
+    font-size: 32px;
+
+}
+
+
+.goal-card h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 18px;
+
+}
+
+
+.goal-card strong {
+
+    font-size: 25px;
+
+    color: #1d4f91;
+
+}
+
+
+.goal-card p {
+
+    margin: 5px 0 0;
+
+    color: #718396;
+
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.water-message-card {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background: white;
+
+    border: 1px solid #d7e3ed;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 18px rgba(
+            40,
+            80,
+            130,
+            0.07
+        );
+
+}
+
+
+.message-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf7fc;
+
+    font-size: 32px;
+
+}
+
+
+.water-message-card h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 22px;
+
+}
+
+
+.water-message-card p {
+
+    margin: 0;
+
+    color: #65778c;
+
+    line-height: 1.6;
+
+}
+
+
+/* ========================================
+   INFO
+======================================== */
+
+.water-info {
+
+    margin-top: 25px;
+
+    padding: 25px 30px;
+
+    background: white;
+
+    border: 1px solid #d7e3ed;
+
+    border-radius: 20px;
+
+}
+
+
+.water-info h2 {
+
+    margin: 0 0 8px;
+
+    font-size: 22px;
+
+}
+
+
+.water-info p {
+
+    margin: 0;
+
+    color: #65778c;
+
+    line-height: 1.6;
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    body {
+
+        padding: 20px;
+
+        padding-top: 90px;
+
+    }
+
+
+    .water-main-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-title {
+
+        font-size: 40px;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 15px;
+
+        padding-top: 80px;
+
+    }
+
+
+    .dashboard-bar {
+
+        gap: 8px;
+
+        padding: 8px 12px;
+
+    }
+
+
+    .nav-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 21px;
+
+    }
+
+
+    .page-title {
+
+        font-size: 30px;
+
+        margin-bottom: 25px;
+
+    }
+    .water-main-card {
+
+        padding: 20px;
+
+    }
+
+
+    .water-glass {
+
+        width: 180px;
+
+        height: 290px;
+
+    }
+
+
+    .water-glass-content span {
+
+        font-size: 35px;
+
+    }
+
+
+    .input-card {
+
+        padding: 20px;
+
+    }
+
+
+    .water-message-card {
+
+        align-items: flex-start;
+
+        padding: 20px;
+
+    }
+
+}
