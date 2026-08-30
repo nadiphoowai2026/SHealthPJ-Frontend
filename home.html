@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Healthcare Tracking</title>
+
+    <link rel="stylesheet" href="home.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="top-bar">
+      <h2 id="siteTitle">Smart Healthcare Tracking</h2>
+
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="mm">မြန်မာ</option>
+      </select>
+    </div>
+
+    <!-- =========================
+         DASHBOARD NAVIGATION
+    ========================== -->
+
+    <nav class="dashboard-bar">
+      <a href="home.html" class="nav-icon active-nav" title="Home"> 🏠 </a>
+
+      <a href="steps.html" class="nav-icon" title="Steps"> 👣 </a>
+
+      <a href="sleep.html" class="nav-icon" title="Sleep"> 😴 </a>
+
+      <a href="water.html" class="nav-icon" title="Water"> 💧 </a>
+
+      <a href="heart-rate.html" class="nav-icon" title="Heart Rate"> ❤️ </a>
+    </nav>
+
+    <!-- =========================
+         MAIN CONTAINER
+    ========================== -->
+
+    <div class="health-container">
+      <!-- =========================
+             PAGE TITLE
+        ========================== -->
+
+      <h1 id="pageTitle">Smart Healthcare Tracking</h1>
+
+      <!-- =========================
+             IMAGE + MESSAGE
+        ========================== -->
+
+      <div class="home-banner">
+        <div class="home-image-box">
+          <img
+            src="photo_2026-08-18_19-06-47.jpg"
+            alt="Smart Healthcare"
+            class="home-image"
+          />
+        </div>
+
+        <div class="home-message">
+          <p id="bannerText">
+            Take care of your health every day. Track your activity, sleep,
+            heart rate and water intake to build healthier habits.
+          </p>
+        </div>
+      </div>
+
+      <!-- =========================
+             HEALTH DASHBOARD
+        ========================== -->
+
+      <div class="dashboard-area">
+        <!-- =========================
+                 HEALTH CARDS
+            ========================== -->
+
+        <div class="health-grid">
+          <!-- =========================
+                     STEPS
+                ========================== -->
+
+          <div class="health-card steps-card" onclick="goToSteps()">
+            <div class="card-heading">
+              <h3 id="stepsTitle">👣 Steps</h3>
+
+              <span class="today-label"> Today </span>
+            </div>
+
+            <p id="stepsText" class="login-card-text">Login to view</p>
+
+            <!-- STEPS DATA -->
+
+            <div id="stepsData" class="steps-data">
+              <div class="steps-main">
+                <div class="steps-circle">
+                  <div class="steps-circle-inner">
+                    <strong id="stepsPercent"> 0% </strong>
+                    <small> Goal </small>
+                  </div>
+                </div>
+
+                <div class="steps-info">
+                  <h2 id="stepVal">0</h2>
+
+                  <p>Today's Steps</p>
+
+                  <span> Goal: 10,000 </span>
+                </div>
+              </div>
+
+              <div class="steps-progress">
+                <div id="stepsProgress"></div>
+              </div>
+
+              <div class="steps-bottom">
+                <div>
+                  <small> Weekly Average </small>
+
+                  <strong id="weeklyAverage"> 0 </strong>
+                </div>
+
+                <span id="stepsStatus"> Start walking! </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =========================
+                     SLEEP
+                ========================== -->
+
+          <div class="health-card sleep-card" onclick="goToSleep()">
+            <h3 id="sleepTitle">😴 Sleep</h3>
+
+            <p id="sleepText">Login to view</p>
+
+            <div id="sleepData" class="small-card-data">
+              <strong id="homeSleepValue"> 0h 0m </strong>
+
+              <span> Today's Sleep </span>
+            </div>
+          </div>
+
+          <!-- =========================
+                     HEART
+                ========================== -->
+
+          <div class="health-card heart-card" onclick="goToHeartRate()">
+            <h3 id="heartTitle">❤️ Heart Rate</h3>
+
+            <p id="heartText">Login to view</p>
+
+            <div id="heartData" class="small-card-data">
+              <strong id="hrVal"> 0 BPM </strong>
+
+              <span> Current </span>
+            </div>
+          </div>
+
+          <!-- =========================
+                     WATER
+                ========================== -->
+
+          <div class="health-card water-card" onclick="goToWater()">
+            <h3 id="waterTitle">💧 Water</h3>
+
+            <p id="waterText">Login to view</p>
+
+            <div id="waterData" class="water-data">
+              <div class="water-value">
+                <strong id="homeWaterValue"> 0 </strong>
+                <span> ml / 2000 ml </span>
+              </div>
+
+              <div class="water-progress">
+                <div id="homeWaterProgress"></div>
+              </div>
+
+              <small> Today's Water </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================
+                 LOGIN AREA
+            ========================== -->
+
+        <div class="login-area" id="loginArea">
+          <!-- LOGIN -->
+
+          <div id="loginBox">
+            <h2 id="loginTitle">Login to view</h2>
+
+            <form id="loginForm">
+              <input type="email" id="username" placeholder="Email" required />
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+
+              <p class="password-info" id="passwordInfo">
+                Password: first letter uppercase, with a number and a symbol.
+              </p>
+
+              <button type="submit" class="login-btn" id="loginBtn">
+                Login
+              </button>
+            </form>
+
+            <p class="account-switch">
+              Don't have an account?
+
+              <button type="button" id="showSignupBtn">Sign Up</button>
+            </p>
+          </div>
+
+          <!-- SIGN UP -->
+
+          <div id="signupBox" style="display: none">
+            <h2>Create Account</h2>
+
+            <form id="signupForm">
+              <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email"
+                required
+              />
+
+              <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+                required
+              />
+
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+
+              <p class="password-info">
+                Password: first letter uppercase, with a number and a symbol.
+              </p>
+
+              <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+
+            <p class="account-switch">
+              Already have an account?
+              <button type="button" id="showLoginBtn">Login</button>
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+                 USER AREA
+            ========================== -->
+
+        <div class="user-area" id="userArea">
+          <div class="user-box">
+            <h2>
+              <span id="welcomeText"> Welcome, </span>
+
+              <span id="userName"></span>
+
+              👋
+            </h2>
+
+            <p id="loggedInText">Your health dashboard is ready.</p>
+
+            <p id="dashboardDescription">
+              Track your daily health and stay on top of your wellness.
+            </p>
+
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+             HEALTHCARE MESSAGE
+        ========================== -->
+
+      <div class="healthcare-info">
+        <p id="info1">Track your daily health activities.</p>
+
+        <p id="info2">Monitor your sleep and recovery.</p>
+
+        <p id="info3">Keep your heart rate within a healthy range.</p>
+
+        <p id="info4">Drink enough water throughout the day.</p>
+
+        <p id="info5">Build healthier habits with Smart Healthcare Tracking.</p>
+      </div>
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="home.js"></script>
+  </body>
+</html>
