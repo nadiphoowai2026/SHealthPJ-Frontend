@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Heart Rate Tracker</title>
+
+    <link rel="stylesheet" href="heart-rate.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+     NAVIGATION
+======================================== -->
+
+    <nav class="dashboard-bar">
+      <a href="home.html" class="nav-icon" title="Home">🏠</a>
+
+      <a href="steps.html" class="nav-icon" title="Steps">👣</a>
+
+      <a href="sleep.html" class="nav-icon" title="Sleep">😴</a>
+
+      <a href="water.html" class="nav-icon" title="Water">💧</a>
+
+      <a href="heart-rate.html" class="nav-icon active" title="Heart Rate"
+        >❤️</a
+      >
+    </nav>
+
+    <!-- ========================================
+     TITLE
+======================================== -->
+
+    <h1
+      class="page-title"
+      data-en="Heart Rate Tracker"
+      data-mm="နှလုံးခုန်နှုန်း စောင့်ကြည့်ခြင်း"
+    >
+      Heart Rate Tracker
+    </h1>
+
+    <main class="heart-container">
+      <!-- ========================================
+     MAIN HEART RATE
+======================================== -->
+
+      <section class="heart-summary">
+        <div class="summary-left">
+          <p
+            class="summary-title"
+            data-en="Today's Heart Rate"
+            data-mm="ယနေ့ နှလုံးခုန်နှုန်း"
+          >
+            Today's Heart Rate
+          </p>
+
+          <div class="heart-number">
+            <span id="todayHeartRate">--</span>
+
+            <small>BPM</small>
+          </div>
+
+          <p id="heartStatus" class="summary-status">
+            Enter your heart rate below.
+          </p>
+
+          <!-- USER INPUT -->
+
+          <div class="heart-input-area">
+            <input
+              type="number"
+              id="heartRateInput"
+              min="30"
+              max="220"
+              placeholder="Enter BPM"
+            />
+
+            <button id="checkHeartBtn" class="check-heart-btn">
+              ❤️ Check Heart Rate
+            </button>
+          </div>
+        </div>
+
+        <!-- ECG -->
+
+        <div class="ecg-box">
+          <svg
+            class="ecg-line"
+            viewBox="0 0 600 180"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="
+                M0 95
+                L60 95
+                C75 95 80 120 95 120
+                C110 120 115 40 130 40
+                C145 40 150 150 168 150
+                C186 150 190 95 215 95
+                L270 95
+                C285 95 290 120 305 120
+                C320 120 325 35 340 35
+                C355 35 360 150 378 150
+                C396 150 400 95 425 95
+                L475 95
+                C490 95 500 70 515 70
+                C530 70 540 95 555 95
+                L600 95
+                "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ========================================
+     RESULT MESSAGE
+======================================== -->
+
+      <section class="heart-message-box">
+        <div class="message-icon" id="messageIcon">❤️</div>
+
+        <div>
+          <h2 id="resultTitle">Check your heart rate</h2>
+
+          <p id="heartMessage">Enter your BPM and press "Check Heart Rate".</p>
+        </div>
+      </section>
+
+      <!-- ========================================
+     THREE CARDS
+======================================== -->
+
+      <section class="dashboard-grid">
+        <!-- CURRENT -->
+
+        <div class="dashboard-card">
+          <div class="card-icon">❤️</div>
+
+          <div class="card-content">
+            <h3 data-en="Current Heart Rate" data-mm="လက်ရှိ နှလုံးခုန်နှုန်း">
+              Current Heart Rate
+            </h3>
+
+            <div class="card-value">
+              <span id="currentRate">--</span>
+              <small>BPM</small>
+            </div>
+
+            <p id="currentStatus">No reading yet.</p>
+          </div>
+        </div>
+
+        <!-- RESTING -->
+
+        <div class="dashboard-card">
+          <div class="card-icon">♡</div>
+
+          <div class="card-content">
+            <h3
+              data-en="Resting Heart Rate"
+              data-mm="အနားယူချိန် နှလုံးခုန်နှုန်း"
+            >
+              Resting Heart Rate
+            </h3>
+
+            <div class="card-value">
+              <span id="restingRate">--</span>
+
+              <small>BPM</small>
+            </div>
+
+            <div class="resting-input-area">
+              <input
+                type="number"
+                id="restingInput"
+                min="30"
+                max="150"
+                placeholder="Enter resting BPM"
+              />
+
+              <button id="restingSaveBtn" class="resting-save-btn">Save</button>
+            </div>
+
+            <p class="resting-note">Measure while resting calmly.</p>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="dashboard-card">
+          <div class="card-icon">💓</div>
+
+          <div class="card-content">
+            <h3 data-en="Heart Rate Status" data-mm="နှလုံးခုန်နှုန်း အခြေအနေ">
+              Heart Rate Status
+            </h3>
+
+            <div class="status-text" id="overallStatus">Waiting</div>
+
+            <p>Your heart rate result will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+     INFORMATION
+======================================== -->
+
+      <section class="heart-info">
+        <div class="info-heart">❤️</div>
+
+        <div class="info-content">
+          <h2 data-en="About Heart Rate" data-mm="နှလုံးခုန်နှုန်းအကြောင်း">
+            About Heart Rate
+          </h2>
+
+          <p
+            data-en="Heart rate tells you how many times your heart beats in one minute. Enter a recent reading to get a simple general status."
+            data-mm="နှလုံးခုန်နှုန်းသည် တစ်မိနစ်အတွင်း သင့်နှလုံးဘယ်နှကြိမ်ခုန်သည်ကို ဖော်ပြပေးပါသည်။ မကြာသေးမီက တိုင်းတာထားသော BPM ကို ထည့်သွင်းပြီး အခြေအနေကို အလွယ်တကူ စစ်ဆေးနိုင်ပါသည်။"
+          >
+            Heart rate tells you how many times your heart beats in one minute.
+            Enter a recent reading to get a simple general status.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="heart-rate.js"></script>
+  </body>
+</html>
