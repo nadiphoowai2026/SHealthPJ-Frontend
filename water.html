@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Water Intake Tracker</title>
+
+    <link rel="stylesheet" href="water.css" />
+  </head>
+
+  <body>
+    <nav class="dashboard-bar">
+      <a href="home.html" class="nav-icon">🏠</a>
+      <a href="steps.html" class="nav-icon">👣</a>
+      <a href="sleep.html" class="nav-icon">😴</a>
+      <a href="water.html" class="nav-icon active">💧</a>
+      <a href="heart-rate.html" class="nav-icon">❤️</a>
+    </nav>
+
+    <main class="water-container">
+      <h1
+        class="page-title"
+        data-en="Water Intake Tracker"
+        data-mm="ရေသောက်သုံးမှု စောင့်ကြည့်ခြင်း"
+      >
+        Water Intake Tracker
+      </h1>
+
+      <section class="water-main-card">
+        <div class="water-left">
+          <h2 data-en="Today's Water Intake" data-mm="ယနေ့ ရေသောက်သုံးမှု">
+            Today's Water Intake
+          </h2>
+
+          <div class="water-glass">
+            <div class="water-fill" id="waterFill"></div>
+
+            <div class="water-glass-content">
+              <span id="waterAmount"> 0 </span>
+
+              <small>ml</small>
+            </div>
+          </div>
+
+          <div class="water-progress">
+            <div class="water-progress-fill" id="progressFill"></div>
+          </div>
+
+          <p class="goal-text">
+            <span id="goalCurrent"> 0 </span>
+
+            /
+
+            <span id="goalAmount"> 2000 </span>
+
+            ml
+          </p>
+        </div>
+
+        <div class="water-right">
+          <div class="input-card">
+            <h2
+              data-en="Enter Your Water Intake"
+              data-mm="သောက်ထားသော ရေပမာဏထည့်ပါ"
+            >
+              Enter Your Water Intake
+            </h2>
+
+            <p
+              class="input-description"
+              data-en="Enter how much water you have drunk today."
+              data-mm="ယနေ့ သောက်ထားသော ရေပမာဏကို ထည့်ပါ။"
+            >
+              Enter how much water you have drunk today.
+            </p>
+
+            <div class="water-input-wrapper">
+              <input
+                type="number"
+                id="waterInput"
+                min="0"
+                max="10000"
+                placeholder="e.g. 500"
+              />
+
+              <span>ml</span>
+            </div>
+
+            <button
+              id="saveWaterBtn"
+              class="save-water-btn"
+              data-en="Check Water Intake"
+              data-mm="ရေပမာဏ စစ်ဆေးမည်"
+            >
+              Check Water Intake
+            </button>
+
+            <p id="waterStatus" class="water-status"></p>
+          </div>
+
+          <div class="goal-card">
+            <div class="goal-icon">💧</div>
+
+            <div>
+              <h3 data-en="Daily Water Goal" data-mm="နေ့စဉ် ရည်မှန်းချက်">
+                Daily Water Goal
+              </h3>
+
+              <strong> 2000 ml </strong>
+
+              <p
+                data-en="About 8 glasses per day"
+                data-mm="တစ်နေ့လျှင် ရေ ၈ ခွက်ခန့်"
+              >
+                About 8 glasses per day
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="water-message-card">
+        <div class="message-icon">💧</div>
+
+        <div>
+          <h2
+            id="waterMessageTitle"
+            data-en="Stay Hydrated"
+            data-mm="ရေဓာတ်ပြည့်ဝအောင် နေပါ"
+          >
+            Stay Hydrated
+          </h2>
+
+          <p
+            id="waterMessage"
+            data-en="Enter your water intake to see your hydration status."
+            data-mm="သင့်ရေသောက်သုံးမှုအခြေအနေကို သိရန် ရေပမာဏထည့်ပါ။"
+          >
+            Enter your water intake to see your hydration status.
+          </p>
+        </div>
+      </section>
+
+      <section class="water-info">
+        <h2
+          data-en="Why Water Matters"
+          data-mm="ရေသောက်ခြင်း ဘာကြောင့်အရေးကြီးသလဲ"
+        >
+          Why Water Matters
+        </h2>
+
+        <p
+          data-en="Drinking enough water helps your body maintain normal functions and supports daily activity."
+          data-mm="ရေလုံလောက်စွာသောက်ခြင်းသည် ခန္ဓာကိုယ်၏ ပုံမှန်လုပ်ဆောင်မှုများကို ထိန်းသိမ်းပေးပြီး နေ့စဉ်လှုပ်ရှားမှုများကို အထောက်အကူပြုပါသည်။"
+        >
+          Drinking enough water helps your body maintain normal functions and
+          supports daily activity.
+        </p>
+      </section>
+    </main>
+
+    <script src="dashboard-nav.js"></script>
+    <script src="water.js"></script>
+  </body>
+</html>
