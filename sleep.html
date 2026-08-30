@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Dashboard</title>
+
+    <link rel="stylesheet" href="sleep.css" />
+  </head>
+
+  <body>
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <nav class="dashboard-bar">
+      <a href="home.html" class="nav-icon" title="Home"> 🏠 </a>
+
+      <a href="steps.html" class="nav-icon" title="Steps"> 👣 </a>
+
+      <a href="sleep.html" class="nav-icon" title="Sleep"> 😴 </a>
+
+      <a href="water.html" class="nav-icon" title="Water"> 💧 </a>
+
+      <a href="heart-rate.html" class="nav-icon" title="Heart Rate"> ❤️ </a>
+    </nav>
+
+    <div class="sleep-container">
+      <!-- ============================= -->
+      <!-- PAGE TITLE -->
+      <!-- ============================= -->
+
+      <h1 data-lang="sleepDashboard">Sleep Dashboard</h1>
+
+      <!-- ============================= -->
+      <!-- WEEKLY AVERAGE -->
+      <!-- ============================= -->
+
+      <div class="dashboard weekly-dashboard">
+        <h2 data-lang="weeklyAverage">Weekly Average</h2>
+
+        <div class="weekly-value">7h 12m</div>
+
+        <div class="wave-chart">
+          <svg viewBox="0 0 700 180" preserveAspectRatio="none">
+            <path
+              d="
+                        M0,120
+                        C60,100 80,140 140,110
+                        C200,80 220,120 280,90
+                        C340,60 360,110 420,75
+                        C480,40 520,90 560,65
+                        C620,40 650,70 700,45
+                        "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="5"
+            />
+          </svg>
+        </div>
+
+        <div class="days">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+      </div>
+
+      <!-- ============================= -->
+      <!-- TODAY'S SLEEP -->
+      <!-- ============================= -->
+
+      <div class="dashboard today-dashboard">
+        <h2 data-lang="todaySleep">Today's Sleep</h2>
+
+        <div class="sleep-circle">
+          <div class="circle-inner">
+            <strong id="todaySleepValue"> 7h 20m </strong>
+
+            <span data-lang="ofGoal"> of 8 hr goal </span>
+          </div>
+        </div>
+
+        <!-- ============================= -->
+        <!-- SLEEP MESSAGES -->
+        <!-- ============================= -->
+
+        <div class="sleep-message">
+          <p id="sleepMessage1"></p>
+
+          <p id="sleepMessage2"></p>
+
+          <p id="sleepMessage3"></p>
+        </div>
+      </div>
+
+      <!-- ============================= -->
+      <!-- CALCULATE SLEEP -->
+      <!-- ============================= -->
+
+      <div class="dashboard calculate-dashboard">
+        <h2>Calculate Sleep</h2>
+
+        <div class="sleep-inputs">
+          <div class="sleep-input-group">
+            <label for="bedtimeInput"> Bedtime </label>
+
+            <input type="time" id="bedtimeInput" />
+          </div>
+
+          <div class="sleep-input-group">
+            <label for="wakeUpInput"> Wake-up </label>
+
+            <input type="time" id="wakeUpInput" />
+          </div>
+        </div>
+
+        <button type="button" id="calculateSleepBtn">Calculate Sleep</button>
+      </div>
+
+      <!-- ============================= -->
+      <!-- SMALL DASHBOARDS -->
+      <!-- ============================= -->
+
+      <div class="small-dashboard-grid">
+        <!-- TOTAL SLEEP -->
+
+        <div class="dashboard small-dashboard">
+          <div class="small-icon">🕐</div>
+
+          <div>
+            <h3 data-lang="totalSleep">Total Sleep Time</h3>
+
+            <p id="totalSleep">7h 20m</p>
+          </div>
+        </div>
+
+        <!-- SLEEP GOAL -->
+
+        <div class="dashboard small-dashboard">
+          <div class="small-icon">🎯</div>
+
+          <div>
+            <h3 data-lang="sleepGoal">Sleep Goal</h3>
+
+            <p>8 hr</p>
+          </div>
+        </div>
+
+        <!-- BEDTIME -->
+
+        <div class="dashboard small-dashboard">
+          <div class="small-icon">🌙</div>
+
+          <div>
+            <h3 data-lang="bedtime">Bedtime</h3>
+
+            <p id="bedtime">10:30 PM</p>
+          </div>
+        </div>
+
+        <!-- WAKE UP -->
+
+        <div class="dashboard small-dashboard">
+          <div class="small-icon">☀️</div>
+
+          <div>
+            <h3 data-lang="wakeUp">Wake-up</h3>
+
+            <p id="wakeUp">6:30 AM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================= -->
+      <!-- SLEEP STAGES -->
+      <!-- ============================= -->
+
+      <div class="dashboard sleep-stages">
+        <h2 data-lang="sleepStages">Sleep Stages</h2>
+
+        <div class="stage-row">
+          <span>
+            💤
+
+            <span data-lang="lightSleep"> Light Sleep </span>
+          </span>
+
+          <strong id="lightSleep"> 3h 10m </strong>
+        </div>
+
+        <div class="stage-row">
+          <span>
+            🛌
+
+            <span data-lang="deepSleep"> Deep Sleep </span>
+          </span>
+
+          <strong id="deepSleep"> 1h 45m </strong>
+        </div>
+
+        <div class="stage-row">
+          <span>
+            🧠
+
+            <span data-lang="remSleep"> REM Sleep </span>
+          </span>
+
+          <strong id="remSleep"> 1h 30m </strong>
+        </div>
+
+        <div class="stage-row">
+          <span>
+            👁
+            <span data-lang="awakeTime"> Awake Time </span>
+          </span>
+
+          <strong id="awakeTime"> 55m </strong>
+        </div>
+      </div>
+
+      <!-- ============================= -->
+      <!-- SLEEP QUALITY -->
+      <!-- ============================= -->
+
+      <div class="dashboard sleep-result">
+        <div class="result-row">
+          <span data-lang="sleepQuality"> Sleep Quality </span>
+
+          <strong id="sleepQuality"> Good </strong>
+        </div>
+
+        <div class="result-row">
+          <span data-lang="sleepEfficiency"> Sleep Efficiency </span>
+
+          <strong id="sleepEfficiency"> 92% </strong>
+        </div>
+      </div>
+
+      <!-- ============================= -->
+      <!-- SLEEP TIP -->
+      <!-- ============================= -->
+
+      <div class="sleep-tip">
+        <h3 data-lang="sleepTipTitle">Sleep Tip</h3>
+
+        <p data-lang="sleepTip">
+          Try to keep a regular bedtime and wake-up time to support better sleep
+          quality.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="dashboard-nav.js"></script>
+
+    <script src="sleep.js"></script>
+  </body>
+</html>
