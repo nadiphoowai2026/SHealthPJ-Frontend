@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Step Tracker</title>
+
+    <link rel="stylesheet" href="steps.css" />
+  </head>
+
+  <body>
+    <nav class="dashboard-bar">
+      <a href="home.html" class="nav-icon" title="Home"> 🏠 </a>
+
+      <a href="steps.html" class="nav-icon" title="Steps"> 👣 </a>
+
+      <a href="sleep.html" class="nav-icon" title="Sleep"> 😴 </a>
+
+      <a href="water.html" class="nav-icon" title="Water"> 💧 </a>
+
+      <a href="heart-rate.html" class="nav-icon" title="Heart Rate"> ❤️ </a>
+    </nav>
+
+    <!-- TITLE -->
+    <div class="step-header">
+      <h1 data-en="Step Tracker" data-mm="ခြေလှမ်း စောင့်ကြည့်မှု">
+        Step Tracker
+      </h1>
+
+      <p
+        data-en="Track your daily activity"
+        data-mm="သင်၏နေ့စဉ်လှုပ်ရှားမှုကို စောင့်ကြည့်ပါ"
+      >
+        Track your daily activity
+      </p>
+    </div>
+
+    <!-- TODAY -->
+    <div class="today-card">
+      <div class="today-left">
+        <h2 data-en="Today's Steps" data-mm="ယနေ့ ခြေလှမ်းများ">
+          Today's Steps
+        </h2>
+
+        <div class="today-number">
+          <span id="todaySteps">0</span>
+        </div>
+
+        <p data-en="steps" data-mm="ခြေလှမ်း">steps</p>
+
+        <div class="goal">
+          <span data-en="Daily Goal" data-mm="နေ့စဉ် ရည်မှန်းချက်">
+            Daily Goal
+          </span>
+
+          : 10,000
+        </div>
+      </div>
+
+      <!-- CIRCLE -->
+      <div class="circle-box">
+        <div class="circle">
+          <div class="circle-center">
+            <strong id="percent"> 0% </strong>
+
+            <small data-en="Goal" data-mm="ရည်မှန်းချက်"> Goal </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-card">
+      <h2 data-en="Today's Activity" data-mm="ယနေ့ လှုပ်ရှားမှု အခြေအနေ">
+        Today's Activity
+      </h2>
+
+      <p id="statusText">Your activity level is good today.</p>
+    </div>
+    <button id="startTrackingBtn" type="button">Start Step Tracking</button>
+
+    <p id="sensorStatus">Press Start Step Tracking first.</p>
+    <!-- ==========================
+         WEEKLY + MONTHLY
+    =========================== -->
+
+    <div class="chart-grid">
+      <!-- WEEKLY -->
+      <div class="chart-card weekly-card">
+        <div class="chart-heading">
+          <div>
+            <h2 data-en="Weekly Steps" data-mm="အပတ်စဉ် ခြေလှမ်းများ">
+              Weekly Steps
+            </h2>
+
+            <p data-en="Last 7 days" data-mm="ပြီးခဲ့သော ၇ ရက်">Last 7 days</p>
+          </div>
+
+          <div class="chart-total">
+            <strong>53.5k</strong>
+            <small>steps</small>
+          </div>
+        </div>
+
+        <!-- WEEKLY GRAPH -->
+
+        <div class="weekly-graph">
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 65%">
+              <span>6.5k</span>
+            </div>
+            <small>Mon</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 82%">
+              <span>8.2k</span>
+            </div>
+            <small>Tue</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 78%">
+              <span>7.8k</span>
+            </div>
+            <small>Wed</small>
+          </div>
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 95%">
+              <span>9.5k</span>
+            </div>
+            <small>Thu</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 84%">
+              <span>8.4k</span>
+            </div>
+            <small>Fri</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 72%">
+              <span>7.2k</span>
+            </div>
+            <small>Sat</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="weekly-bar" style="height: 58%">
+              <span>5.8k</span>
+            </div>
+            <small>Sun</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- MONTHLY -->
+      <div class="chart-card monthly-card">
+        <div class="chart-heading">
+          <div>
+            <h2 data-en="Monthly Steps" data-mm="လစဉ် ခြေလှမ်းများ">
+              Monthly Steps
+            </h2>
+
+            <p data-en="This month" data-mm="ယခုလ">This month</p>
+          </div>
+
+          <div class="chart-total">
+            <strong>245.6k</strong>
+            <small>steps</small>
+          </div>
+        </div>
+
+        <!-- MONTHLY GRAPH -->
+
+        <div class="monthly-graph">
+          <div class="graph-bar">
+            <div class="monthly-bar" style="height: 65%">
+              <span>48k</span>
+            </div>
+            <small>W1</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="monthly-bar" style="height: 80%">
+              <span>62k</span>
+            </div>
+            <small>W2</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="monthly-bar" style="height: 92%">
+              <span>71k</span>
+            </div>
+            <small>W3</small>
+          </div>
+
+          <div class="graph-bar">
+            <div class="monthly-bar" style="height: 75%">
+              <span>63k</span>
+            </div>
+            <small>W4</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFORMATION -->
+    <div class="step-info">
+      <h2 data-en="Keep Moving" data-mm="ဆက်လက်လှုပ်ရှားပါ">Keep Moving</h2>
+
+      <p
+        data-en="Regular walking and daily physical activity can help support a healthy lifestyle."
+        data-mm="ပုံမှန်လမ်းလျှောက်ခြင်းနှင့် နေ့စဉ်ကိုယ်လက်လှုပ်ရှားမှုများသည် ကျန်းမာသောနေထိုင်မှုပုံစံကို အထောက်အကူပြုနိုင်ပါသည်။"
+      >
+        Regular walking and daily physical activity can help support a healthy
+        lifestyle.
+      </p>
+    </div>
+    <script src="dashboard-nav.js"></script>
+    <script src="steps.js"></script>
+  </body>
+</html>
