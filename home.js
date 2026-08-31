@@ -322,7 +322,7 @@ async function loadHealthData() {
 
         const response =
             await fetch(
-                "https://smart-healthcare-backend-production-8601.up.railway.app/health-data/" + userId
+                "https://smart-healthcare-backend-production-d51b.up.railway.app/health-data/" + userId
             );
 
         const result =
@@ -524,7 +524,7 @@ loginForm.addEventListener("submit", async function (event) {
     try {
 
         const response = await fetch(
-           "https://smart-healthcare-backend-production-8601.up.railway.app/login" ,
+           "https://smart-healthcare-backend-production-d51b.up.railway.app/login" ,
             {
                 method: "POST",
 
@@ -689,7 +689,7 @@ signupForm.addEventListener("submit", async function (event) {
     try {
 
         const response = await fetch(
-           "https://smart-healthcare-backend-production-8601.up.railway.app/register",
+           "https://smart-healthcare-backend-production-d51b.up.railway.app/register",
             {
                 method: "POST",
 
