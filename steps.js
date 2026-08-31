@@ -2,7 +2,7 @@
 // STEPS TRACKER
 // ========================================
 
-const API_URL = "https://smart-healthcare-backend-production-8601.up.railway.app";
+const API_URL = "https://smart-healthcare-backend-production-d51b.up.railway.app";
 
 const DAILY_GOAL = 10000;
 
